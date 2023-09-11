@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq21undctcew6"]
+[gd_scene load_steps=2 format=3 uid="uid://bq21undctcew6"]
 
-[ext_resource type="PackedScene" uid="uid://cwqokl0io1k7b" path="res://player/player.tscn" id="1_cpob0"]
-[ext_resource type="PackedScene" uid="uid://blbjfy0hqmpb5" path="res://platforms/sample_tile.tscn" id="2_rfgor"]
+[ext_resource type="Script" path="res://main.gd" id="1_niy5a"]
 
 [node name="main" type="Node2D"]
 position = Vector2(100, 100)
+script = ExtResource("1_niy5a")
 
-[node name="player" parent="." instance=ExtResource("1_cpob0")]
-position = Vector2(188, 206)
+[node name="play" type="Button" parent="."]
+offset_left = 130.0
+offset_top = -15.0
+offset_right = 376.0
+offset_bottom = 94.0
+text = "PLAY
+"
 
-[node name="sampleTile" parent="." instance=ExtResource("2_rfgor")]
-position = Vector2(81, 303)
+[node name="quit" type="Button" parent="."]
+offset_left = 132.0
+offset_top = 126.0
+offset_right = 378.0
+offset_bottom = 235.0
+tooltip_text = "EXIT GAME"
+text = "QUIT"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

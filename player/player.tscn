@@ -1,7 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://cwqokl0io1k7b"]
+[gd_scene load_steps=49 format=3 uid="uid://cwqokl0io1k7b"]
 
-[ext_resource type="Texture2D" uid="uid://pr8eguavxgf3" path="res://Colour2/NoOutline/120x80_PNGSheets/_Attack.png" id="1_5x2cm"]
 [ext_resource type="Texture2D" uid="uid://bngmrjkdumndh" path="res://Colour2/NoOutline/120x80_PNGSheets/_Idle.png" id="1_nm6n5"]
+[ext_resource type="Texture2D" uid="uid://pr8eguavxgf3" path="res://Colour2/NoOutline/120x80_PNGSheets/_Attack.png" id="1_ugol3"]
 [ext_resource type="Texture2D" uid="uid://b0spurxlh2yf1" path="res://Colour2/NoOutline/120x80_PNGSheets/_Fall.png" id="2_h1jfw"]
 [ext_resource type="Texture2D" uid="uid://dmv7ar4cfwepe" path="res://Colour2/NoOutline/120x80_PNGSheets/_Attack2.png" id="2_jsqd7"]
 [ext_resource type="Texture2D" uid="uid://dhto6xogd3c56" path="res://Colour2/NoOutline/120x80_PNGSheets/_Run.png" id="2_s48xx"]
@@ -23,9 +23,11 @@ var heavy_attacking = false
 
 @onready var sprite : AnimatedSprite2D = get_node(\"AnimatedSprite2D\")
 
+func  _ready():
+	pass
+	
 func _physics_process(delta):
 	
-	vel.x = 0
 	# Add the gravity.
 	#if Input.is_action_pressed(\"forward\"):
 		#vel.x += SPEED
@@ -39,28 +41,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y -= JUMP_VELOCITY
-	
-	if velocity.x == 0 and is_on_floor():
-		sprite.play(\"idle\")
-	
-	if !is_on_floor():
-		if velocity.y < 0:
-			sprite.play(\"jump\")
-		elif velocity.y >0:
-			sprite.play(\"fall\")
-	
-	if velocity.x != 0 :
-		sprite.play(\"run\")
-		sprite.flip_h = velocity.x < 0
-	
-	if Input.is_action_pressed(\"normal_attack\"):
-		sprite.play(\"attack_normal\")
-		normal_attacking = true
-		heavy_attacking = false
-	elif Input.is_action_pressed(\"heavy_attack\"):
-		sprite.play(\"attack_heavy\")
-		normal_attacking = false
-		heavy_attacking = true
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -72,43 +52,43 @@ func _physics_process(delta):
 	move_and_slide()
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3ym8"]
-atlas = ExtResource("1_5x2cm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uq83"]
+atlas = ExtResource("1_ugol3")
 region = Rect2(0, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_11nrc"]
-atlas = ExtResource("1_5x2cm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6yw1"]
+atlas = ExtResource("1_ugol3")
 region = Rect2(120, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ax3rd"]
-atlas = ExtResource("1_5x2cm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nwah"]
+atlas = ExtResource("1_ugol3")
 region = Rect2(240, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7uvep"]
-atlas = ExtResource("1_5x2cm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkk11"]
+atlas = ExtResource("1_ugol3")
 region = Rect2(360, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqvka"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwf52"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(0, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftu7x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6ld8"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(120, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_52dva"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpw0r"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(240, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qc4ks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6api"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(360, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_435nu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmuf3"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(480, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylyhx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcpua"]
 atlas = ExtResource("2_jsqd7")
 region = Rect2(600, 0, 120, 80)
 
@@ -200,43 +180,43 @@ region = Rect2(1080, 0, 120, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w3ym8")
+"texture": SubResource("AtlasTexture_0uq83")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_11nrc")
+"texture": SubResource("AtlasTexture_s6yw1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ax3rd")
+"texture": SubResource("AtlasTexture_2nwah")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7uvep")
+"texture": SubResource("AtlasTexture_vkk11")
 }],
 "loop": true,
 "name": &"attack_heavy",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wqvka")
+"texture": SubResource("AtlasTexture_lwf52")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ftu7x")
+"texture": SubResource("AtlasTexture_t6ld8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_52dva")
+"texture": SubResource("AtlasTexture_qpw0r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qc4ks")
+"texture": SubResource("AtlasTexture_j6api")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_435nu")
+"texture": SubResource("AtlasTexture_xmuf3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylyhx")
+"texture": SubResource("AtlasTexture_tcpua")
 }],
 "loop": true,
 "name": &"attack_normal",
-"speed": 8.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -270,7 +250,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -322,8 +302,155 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwd7"]
-size = Vector2(13, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hf6pp"]
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_o00e1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_5xo12"]
+resource_name = "attack_heavy"
+
+[sub_resource type="Animation" id="Animation_ueqi7"]
+resource_name = "attack_normal"
+
+[sub_resource type="Animation" id="Animation_7la5q"]
+resource_name = "fall"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1375),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"fall"]
+}
+
+[sub_resource type="Animation" id="Animation_mu055"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 4]
+}
+
+[sub_resource type="Animation" id="Animation_fd60h"]
+resource_name = "jump"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_1fqln"]
+resource_name = "run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25r6m"]
+_data = {
+"RESET": SubResource("Animation_o00e1"),
+"attack_heavy": SubResource("Animation_5xo12"),
+"attack_normal": SubResource("Animation_ueqi7"),
+"fall": SubResource("Animation_7la5q"),
+"idle": SubResource("Animation_mu055"),
+"jump": SubResource("Animation_fd60h"),
+"run": SubResource("Animation_1fqln")
+}
 
 [node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_jl6dw")
@@ -331,9 +458,19 @@ script = SubResource("GDScript_jl6dw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -19)
 sprite_frames = SubResource("SpriteFrames_jw7e3")
-animation = &"attack_normal"
-frame_progress = 0.232453
+animation = &"fall"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4)
-shape = SubResource("RectangleShape2D_vlwd7")
+position = Vector2(-3, 2)
+shape = SubResource("CapsuleShape2D_hf6pp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_25r6m")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
