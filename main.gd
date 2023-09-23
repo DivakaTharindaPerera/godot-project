@@ -16,4 +16,4 @@ func _on_quit_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/level_2.tscn") # Replace with function body.

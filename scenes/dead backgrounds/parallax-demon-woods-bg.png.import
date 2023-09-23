@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijarx72i454e"
-path="res://.godot/imported/Comparison2x.png-fafa6548cf276715ee42372f17a10414.ctex"
+uid="uid://cubl7fa0btqbe"
+path="res://.godot/imported/parallax-demon-woods-bg.png-8a621909a2bf7c58fff6a4dc944e6f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Comparison2x.png"
-dest_files=["res://.godot/imported/Comparison2x.png-fafa6548cf276715ee42372f17a10414.ctex"]
+source_file="res://scenes/dead backgrounds/parallax-demon-woods-bg.png"
+dest_files=["res://.godot/imported/parallax-demon-woods-bg.png-8a621909a2bf7c58fff6a4dc944e6f4b.ctex"]
 
 [params]
 

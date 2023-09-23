@@ -1,26 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq21undctcew6"]
+[gd_scene load_steps=7 format=3 uid="uid://bq21undctcew6"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_niy5a"]
+[ext_resource type="Texture2D" uid="uid://cm1pr85m4uius" path="res://platforms/background/background_layer_1.png" id="2_sv832"]
+[ext_resource type="Script" path="res://scenes/MenuBackground.gd" id="2_xtefa"]
+[ext_resource type="Texture2D" uid="uid://b05bcbdghtfuy" path="res://platforms/background/background_layer_2.png" id="3_pqfnx"]
+[ext_resource type="Texture2D" uid="uid://ylaurd6vtsfb" path="res://platforms/background/background_layer_3.png" id="4_o0i4g"]
+[ext_resource type="AudioStream" uid="uid://uxeh12j7k3gb" path="res://audio/music/Grasslands Theme.mp3" id="6_8d6x0"]
 
 [node name="main" type="Node2D"]
 position = Vector2(100, 100)
 script = ExtResource("1_niy5a")
 
+[node name="MenuBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_xtefa")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MenuBackground"]
+motion_mirroring = Vector2(720, 0)
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="MenuBackground/ParallaxLayer"]
+position = Vector2(360, 238)
+scale = Vector2(2.25, 2.64444)
+texture = ExtResource("2_sv832")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MenuBackground"]
+motion_mirroring = Vector2(720, 0)
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="MenuBackground/ParallaxLayer2"]
+position = Vector2(360, 239.5)
+scale = Vector2(2.25, 2.66111)
+texture = ExtResource("3_pqfnx")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MenuBackground"]
+motion_mirroring = Vector2(720, 0)
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="MenuBackground/ParallaxLayer3"]
+position = Vector2(360, 240)
+scale = Vector2(2.25, 2.66667)
+texture = ExtResource("4_o0i4g")
+
 [node name="play" type="Button" parent="."]
-offset_left = 130.0
-offset_top = -15.0
-offset_right = 376.0
-offset_bottom = 94.0
+offset_left = 152.0
+offset_top = 23.0
+offset_right = 398.0
+offset_bottom = 132.0
 text = "PLAY
 "
 
 [node name="quit" type="Button" parent="."]
-offset_left = 132.0
-offset_top = 126.0
-offset_right = 378.0
-offset_bottom = 235.0
+offset_left = 154.0
+offset_top = 164.0
+offset_right = 400.0
+offset_bottom = 273.0
 tooltip_text = "EXIT GAME"
 text = "QUIT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8d6x0")
+volume_db = -15.022
+autoplay = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

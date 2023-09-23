@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjcrcx7d1oid7"
+path="res://.godot/imported/Dungeon Theme.mp3-e65150ca6f97bbd8f335bb3a7c15a7f2.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Dungeon Theme.mp3"
+dest_files=["res://.godot/imported/Dungeon Theme.mp3-e65150ca6f97bbd8f335bb3a7c15a7f2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://poh55wr1tpmy"
+path="res://.godot/imported/roar3_monster.wav-79489e01971ad8de8f4e847a7473aa9f.sample"
+
+[deps]
+
+source_file="res://audio/sound effects/roar3_monster.wav"
+dest_files=["res://.godot/imported/roar3_monster.wav-79489e01971ad8de8f4e847a7473aa9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
