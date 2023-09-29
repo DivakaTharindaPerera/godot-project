@@ -1,0 +1,598 @@
+[gd_scene load_steps=16 format=3 uid="uid://dkcgi6xdbmas6"]
+
+[ext_resource type="Script" path="res://scenes/level_3_completed_scripts/bg_layer_1.gd" id="1_1xnmv"]
+[ext_resource type="Texture2D" uid="uid://cm1pr85m4uius" path="res://platforms/background/background_layer_1.png" id="1_11tow"]
+[ext_resource type="Script" path="res://scenes/level_3_completed.gd" id="1_ga4ny"]
+[ext_resource type="Texture2D" uid="uid://b05bcbdghtfuy" path="res://platforms/background/background_layer_2.png" id="2_glcyb"]
+[ext_resource type="Texture2D" uid="uid://ylaurd6vtsfb" path="res://platforms/background/background_layer_3.png" id="3_whnl4"]
+[ext_resource type="Texture2D" uid="uid://ohnqx7rtnpl7" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="5_urie3"]
+[ext_resource type="Texture2D" uid="uid://r2xgqoj58qyo" path="res://Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="6_a3hfk"]
+[ext_resource type="Texture2D" uid="uid://bvqkoppprkbil" path="res://Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png" id="7_r13fh"]
+[ext_resource type="Texture2D" uid="uid://dhk4sy4d0h0oh" path="res://enemies/main_enemy/Run.png" id="8_2lgji"]
+[ext_resource type="AudioStream" uid="uid://eecfojq5tvqx" path="res://audio/music/Boss Theme.mp3" id="10_yuixd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5jyj"]
+texture = ExtResource("5_urie3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+0:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+21:13/0 = 0
+22:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+22:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+22:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+22:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+22:17/0 = 0
+23:17/0 = 0
+24:17/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+21:18/0 = 0
+22:18/0 = 0
+23:18/0 = 0
+24:18/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+22:19/0 = 0
+23:19/0 = 0
+24:19/0 = 0
+17:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
+21:20/0 = 0
+22:20/0 = 0
+23:20/0 = 0
+24:20/0 = 0
+17:21/0 = 0
+18:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+21:21/0 = 0
+22:21/0 = 0
+23:21/0 = 0
+24:21/0 = 0
+17:22/0 = 0
+18:22/0 = 0
+19:22/0 = 0
+20:22/0 = 0
+21:22/0 = 0
+22:22/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_km61v"]
+sources/0 = SubResource("TileSetAtlasSource_t5jyj")
+
+[sub_resource type="Animation" id="Animation_mfx62"]
+resource_name = "roll"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_r13fh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("enemy:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_2lgji")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("enemy:hframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("enemy:vframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("enemy:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_pchin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7wkqu"]
+_data = {
+"RESET": SubResource("Animation_pchin"),
+"roll": SubResource("Animation_mfx62")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ga4ny")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_1xnmv")
+scrolling_speed = 50
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(946, 0)
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(473, 249)
+scale = Vector2(2.95625, 2.76667)
+texture = ExtResource("1_11tow")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+script = ExtResource("1_1xnmv")
+scrolling_speed = 75
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(946, 0)
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(473, 249)
+scale = Vector2(2.95625, 2.76667)
+texture = ExtResource("2_glcyb")
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+script = ExtResource("1_1xnmv")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_mirroring = Vector2(946, 0)
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer3"]
+position = Vector2(473, 249)
+scale = Vector2(2.95625, 2.76667)
+texture = ExtResource("3_whnl4")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_km61v")
+format = 2
+layer_0/tile_data = PackedInt32Array(1638400, 0, 5, 1638401, 65536, 5, 1638402, 131072, 5, 1638403, 0, 5, 1638405, 131072, 5, 1638406, 0, 5, 1638407, 65536, 5, 1638408, 131072, 5, 1638410, 65536, 5, 1638411, 131072, 5, 1638412, 0, 5, 1638413, 65536, 5, 1638415, 0, 5, 1638416, 65536, 5, 1638417, 131072, 5, 1638418, 0, 5, 1638420, 131072, 5, 1638421, 0, 5, 1638422, 65536, 5, 1638423, 131072, 5, 1638425, 65536, 5, 1638426, 131072, 5, 1638427, 0, 5, 1638428, 65536, 5, 1638430, 0, 5, 1638431, 65536, 5, 1638432, 131072, 5, 1638433, 0, 5, 1638435, 131072, 5, 1638436, 0, 5, 1638437, 65536, 5, 1638438, 131072, 5, 1638440, 65536, 5, 1638441, 131072, 5, 1638442, 0, 5, 1638443, 65536, 5, 1638445, 0, 5, 1638446, 65536, 5, 1638447, 131072, 5, 1638448, 0, 5, 1638450, 131072, 5, 1638451, 0, 5, 1638452, 65536, 5, 1638453, 131072, 5, 1638455, 65536, 5, 1638456, 131072, 5, 1638457, 0, 5, 1638458, 65536, 5, 1638460, 0, 5, 1638461, 65536, 5, 1638462, 131072, 5, 1638463, 0, 5, 1638404, 65536, 5, 1638409, 0, 5, 1638414, 131072, 5, 1638419, 65536, 5, 1638424, 0, 5, 1638429, 131072, 5, 1638434, 65536, 5, 1638439, 0, 5, 1638444, 131072, 5, 1638449, 65536, 5, 1638454, 0, 5, 1638459, 131072, 5, 1638464, 65536, 5, 1703936, 0, 6, 1703937, 65536, 6, 1703938, 131072, 6, 1703939, 0, 6, 1703940, 65536, 6, 1703941, 131072, 6, 1703942, 0, 6, 1703943, 65536, 6, 1703944, 131072, 6, 1703945, 0, 6, 1703946, 65536, 6, 1703947, 131072, 6, 1703948, 0, 6, 1703949, 65536, 6, 1703950, 131072, 6, 1703951, 0, 6, 1703952, 65536, 6, 1703953, 131072, 6, 1703954, 0, 6, 1703955, 65536, 6, 1703956, 131072, 6, 1703957, 0, 6, 1703958, 65536, 6, 1703959, 131072, 6, 1703960, 0, 6, 1703961, 65536, 6, 1703962, 131072, 6, 1703963, 0, 6, 1703964, 65536, 6, 1703965, 131072, 6, 1703966, 0, 6, 1703967, 65536, 6, 1703968, 131072, 6, 1703969, 0, 6, 1703970, 65536, 6, 1703971, 131072, 6, 1703972, 0, 6, 1703973, 65536, 6, 1703974, 131072, 6, 1703975, 0, 6, 1703976, 65536, 6, 1703977, 131072, 6, 1703978, 0, 6, 1703979, 65536, 6, 1703980, 131072, 6, 1703981, 0, 6, 1703982, 65536, 6, 1703983, 131072, 6, 1703984, 0, 6, 1703985, 65536, 6, 1703986, 131072, 6, 1703987, 0, 6, 1703988, 65536, 6, 1703989, 131072, 6, 1703990, 0, 6, 1703991, 65536, 6, 1703992, 131072, 6, 1703993, 0, 6, 1703994, 65536, 6, 1703995, 131072, 6, 1703996, 0, 6, 1703997, 65536, 6, 1703998, 131072, 6, 1703999, 0, 6, 1704000, 65536, 6, 1638465, 131072, 5, 1704001, 131072, 6)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 223.0
+offset_top = 89.0
+offset_right = 499.0
+offset_bottom = 131.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "LEVEL 2 COMPLETED"
+
+[node name="Base-01" type="Sprite2D" parent="."]
+position = Vector2(357, 329.5)
+scale = Vector2(1.6875, 1.34375)
+texture = ExtResource("6_a3hfk")
+region_enabled = true
+region_rect = Rect2(240, 56, 64, 32)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 314.0
+offset_right = 403.0
+offset_bottom = 345.0
+text = "CONTINUE"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(99, 381)
+scale = Vector2(1.3625, 1.4)
+texture = ExtResource("7_r13fh")
+hframes = 8
+
+[node name="enemy" type="Sprite2D" parent="."]
+position = Vector2(633, 356)
+scale = Vector2(1.67188, 1.96875)
+texture = ExtResource("8_2lgji")
+hframes = 2
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "roll"
+libraries = {
+"": SubResource("AnimationLibrary_7wkqu")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_yuixd")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

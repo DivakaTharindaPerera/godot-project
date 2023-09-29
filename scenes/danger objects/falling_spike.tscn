@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=3 uid="uid://duma763y0f0pb"]
+
+[ext_resource type="Texture2D" uid="uid://bup4g0w32pqod" path="res://platforms/cave assets/props1.png" id="1_icpbg"]
+[ext_resource type="Script" path="res://scenes/danger objects/falling_spike.gd" id="1_ynh5b"]
+[ext_resource type="AudioStream" uid="uid://bji0nq2bjt7f0" path="res://audio/sound effects/object-which-falls-fake-89853.mp3" id="3_ogibx"]
+
+[sub_resource type="Animation" id="Animation_6yoax"]
+resource_name = "fall"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 900)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Props1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionPolygon2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_ogibx"), ExtResource("3_ogibx")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s75eq"]
+_data = {
+"fall": SubResource("Animation_6yoax")
+}
+
+[node name="FallingSpike" type="Node2D"]
+script = ExtResource("1_ynh5b")
+start_time = 10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 338.09)
+collision_mask = 3
+
+[node name="Props1" type="Sprite2D" parent="Area2D"]
+position = Vector2(-0.500042, 7.89997)
+scale = Vector2(0.267857, 0.760417)
+texture = ExtResource("1_icpbg")
+region_enabled = true
+region_rect = Rect2(832, 176, 56, 96)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-0.79884, 6.73717)
+scale = Vector2(0.289691, 0.73489)
+polygon = PackedVector2Array(-25.9368, -48.085, -25.9368, -44.0028, -21.2211, -35.8383, -21.2211, -16.7878, -16, -12, -13.3614, 11.7879, -7.07368, 18.5916, -3.92982, 18.5916, -2.35789, 28.1168, 3.92983, 44.4458, 7.07369, 40.3636, 8.64562, 34.9206, 10.2175, 30.8383, 10, 28, 11.7895, 24.0346, 13.3614, 17.2309, 16.5053, 4.98412, 21.2211, 2.26263, 21, 0, 21, -13, 24.3649, -15.4271, 25, -30, 28, -35, 28, -48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s75eq")
+}
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ogibx")
+volume_db = -24.0
+stream_paused = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

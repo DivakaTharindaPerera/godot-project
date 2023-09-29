@@ -36,7 +36,7 @@ func _on_area_2d_body_entered(body):
 		body.health -= 20
 		var direction = body.global_position - self.global_position
 		var direction_sign = sign(direction.x)
-		
+
 		if direction_sign > 0:
 			body.me_got_hit(Vector2.RIGHT)
 		elif direction_sign < 0 :

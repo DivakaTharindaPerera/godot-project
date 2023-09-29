@@ -271,6 +271,7 @@ facing_right = Vector2(15, 3)
 stream = ExtResource("4_s2s6f")
 
 [connection signal="facing_direction_changed_boar" from="." to="Area2D" method="_on_boar_facing_direction_changed_boar"]
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="damageable" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="CharacterStateMachine/Hit/Timer" to="CharacterStateMachine/Hit" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

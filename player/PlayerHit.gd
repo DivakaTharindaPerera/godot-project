@@ -20,4 +20,3 @@ func on_hit_function(direction : Vector2):
 	else:
 		emit_signal("interrupt_state", dead_state)
 		playback.travel("dead")
-	

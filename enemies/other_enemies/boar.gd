@@ -65,3 +65,8 @@ func update_direction():
 		sprite.flip_h = false
 
 	emit_signal("facing_direction_changed_boar", sprite.flip_h)
+
+
+func _on_animation_tree_animation_finished(anim_name):
+	if anim_name == "dead":
+		queue_free()

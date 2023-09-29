@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b47b2kue85eyw"]
+
+[ext_resource type="Script" path="res://scenes/danger objects/spike.gd" id="1_uc1bg"]
+[ext_resource type="Texture2D" uid="uid://sr7ls8mruqib" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="2_5mlev"]
+
+[node name="Spike" type="CharacterBody2D"]
+script = ExtResource("1_uc1bg")
+starting_position = Vector2(100, 0)
+ending_position = Vector2(100, 150)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -42, -11, -31, -11, -14, -9, -8, -7, 20, -2, 42, 1, 42, 8, 20, 9, -8, 11, -12, 11, -29, 8, -42)
+
+[node name="Props-rocks" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(1, 2.64769)
+texture = ExtResource("2_5mlev")
+region_enabled = true
+region_rect = Rect2(176, 48, 32, 32)

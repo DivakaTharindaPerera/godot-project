@@ -1110,18 +1110,29 @@ theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "LEVEL 1 COMPLETED"
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 166.0
+offset_top = 233.0
+offset_right = 548.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(1, 0.72549, 0.682353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Moving objects can hurt you
+watch out!"
+horizontal_alignment = 1
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(348, 422)
+position = Vector2(358.25, 421.75)
 scale = Vector2(7.15625, 2.21875)
 texture = ExtResource("8_mn77f")
 region_enabled = true
 region_rect = Rect2(48, 96, 16, 16)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 303.0
-offset_top = 407.0
-offset_right = 394.0
-offset_bottom = 438.0
+offset_left = 313.25
+offset_top = 406.75
+offset_right = 404.25
+offset_bottom = 437.75
 text = "CONTINUE"
 
 [node name="Enemy" type="Sprite2D" parent="."]

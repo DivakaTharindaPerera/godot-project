@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctjah7j5nvcgy"]
+
+[ext_resource type="Texture2D" uid="uid://dl3xxci5bnbpx" path="res://platforms/cave assets/mainlev_build.png" id="1_eyjjf"]
+[ext_resource type="Script" path="res://scenes/moving platform/moving_rock_platform.gd" id="1_gl7ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrqsa"]
+size = Vector2(71, 13)
+
+[node name="MovingRockPlatform" type="CharacterBody2D"]
+script = ExtResource("1_gl7ac")
+x_starting_point = -100.0
+x_ending_point = 100.0
+starting_direction = Vector2(1, 0)
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(21, 0)
+texture = ExtResource("1_eyjjf")
+region_enabled = true
+region_rect = Rect2(128, 240, 32, 16)
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(-19, 0)
+texture = ExtResource("1_eyjjf")
+region_enabled = true
+region_rect = Rect2(528, 240, 32, 16)
+
+[node name="middle" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyjjf")
+region_enabled = true
+region_rect = Rect2(448, 176, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_nrqsa")

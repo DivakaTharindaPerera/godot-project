@@ -12,4 +12,7 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	if CurrentVariables.current_level == 3:
+		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
+	elif CurrentVariables.current_level == 2:
+		get_tree().change_scene_to_file("res://scenes/level_2.tscn")

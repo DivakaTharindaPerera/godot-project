@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5xdbuuwte8l"
+path="res://.godot/imported/die_boss.wav-5927187b57c1e7e9d1cd7c4c04ebaa01.sample"
+
+[deps]
+
+source_file="res://audio/sound effects/die_boss.wav"
+dest_files=["res://.godot/imported/die_boss.wav-5927187b57c1e7e9d1cd7c4c04ebaa01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
